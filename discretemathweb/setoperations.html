@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale= 0.5"> 
+    <title>Set Operations</title>
+    <link rel="stylesheet" href="discretemath.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <button onclick="showSection('home')">Home</button>
+            <button onclick="showSection('learn')">Learn</button>
+            <button onclick="showSection('calculator')">Calculator</button>
+            <button onclick="showSection('quiz')">Quiz</button>
+        <!-- Chatbot -->
+<div id="chatbot">
+  <div id="chat-header">
+    Welcome To Set Theory
+    <button id="chat-close-btn" aria-label="Close Chatbot">&times;</button>
+  </div>
+  <div id="chat-log"></div>
+  <div id="chat-input-container">
+    <input type="text" id="chat-input" placeholder="Ask about sets..." autocomplete="off" />
+    <button id="chat-send-btn">Send</button>
+  </div>
+</div>
+
+<button id="chat-toggle-btn" style="position: fixed; bottom: 30px; right: 30px; z-index: 1001; background:#4a90e2; border:none; padding: 12px 18px; color:white; border-radius: 25px; cursor:pointer; font-weight:600;">
+  Ask About Set?
+</button>   
+    </div>
+        </div>
+
+        <!-- Home -->
+        <div id="home" class="section">
+            <h1>Welcome to Set Theory</h1>
+            <p><br/>This interactive learning platform is your companion in mastering Set Theory.
+                <ul><br>
+                   <li><strong>Learn</strong> – Understand set concepts and operations.</li> <br>
+                   <li><strong>Calculator</strong> – Try operations interactively.</li> <br>
+                   <li><strong>Quiz</strong> – Test your understanding.</li>
+                 </ul>
+            </p>
+        </div>
+
+        <!-- Learn Section -->
+<div id="learn" class="section" style="display: none;">
+    <h2>Learning Center</h2>
+    <div class="tabs">
+        <div class="tab">
+            <h1>Set Theory Summary</h1>
+
+            <!-- Basic Concepts -->
+            <div class="section">
+                <h2>1. Basic Concepts</h2>
+                <div class="example">
+                    <p><span class="definition">Set:</span> A well-defined collection of distinct objects.</p>
+                    <ul>
+                        <li><code>A = {a, e, i, o, u}</code> (roster method)</li>
+                        <li><code>E = {x | x is an odd whole positive number}</code> (descriptive method)</li>
+                    </ul>
+                    <p><span class="definition">Finite vs. Infinite Sets:</span></p>
+                    <ul>
+                        <li>Finite: <code>D = {1, 2, 5, 9}</code></li>
+                        <li>Infinite: <code>I = {x | x is a whole number}</code></li>
+                    </ul>
+                    <p><span class="definition">Notation:</span></p>
+                    <ul>
+                        <li>3 ∈ E = {1, 3, 5, ...}</li>
+                        <li>6 ∉ E</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Set Relations -->
+            <div class="section">
+                <h2>2. Set Relations</h2>
+                <div class="example">
+                    <p><span class="definition">Equal Sets:</span> Same elements, regardless of order.</p>
+                    <ul><li><code>{1, 2, 3, 4} = {3, 4, 1, 2}</code></li></ul>
+                    <p><span class="definition">Equivalent Sets:</span> One-to-one correspondence.</p>
+                    <ul><li><code>{1, 2, 3} ≃ {a, b, c}</code></li></ul>
+                    <p><span class="definition">Subsets:</span></p>
+                    <ul>
+                        <li>Proper Subset: <code>B = {2, 4} ⊂ A = {1, 2, 3, 4, 5}</code></li>
+                        <li>Improper Subset: <code>A ⊆ A</code></li>
+                    </ul>
+                    <p><span class="definition">Disjoint Sets:</span></p>
+                    <ul><li><code>{1, 3, 5}</code> and <code>{2, 4, 6}</code></li></ul>
+                </div>
+            </div>
+
+            <!-- Universal Set & Empty Set -->
+            <div class="section">
+                <h2>3. Universal Set and Empty Set</h2>
+                <div class="example">
+                    <p><span class="definition">Universal Set (U):</span> Contains all elements under discussion.</p>
+                    <ul><li><code>U = {a, b, c, ..., z}</code> (letters in names)</li></ul>
+                    <p><span class="definition">Empty Set (∅):</span> Contains no elements.</p>
+                    <ul><li>Set of odd numbers divisible by 2: <code>∅</code></li></ul>
+                </div>
+            </div>
+
+            <!-- Power Set -->
+            <div class="section">
+                <h2>4. Power Set</h2>
+                <div class="example">
+                    <p><span class="definition">Definition:</span> Set of all subsets of A, denoted <code>P(A)</code>.</p>
+                    <ul>
+                        <li><code>A = {1, 2}</code> → <code>P(A) = {∅, {1}, {2}, {1, 2}}</code></li>
+                        <li><code>B = {a, b, c}</code> → <code>P(B) = {∅, {a}, {b}, {c}, {a, b}, {a, c}, {b, c}, {a, b, c}}</code></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Set Operations -->
+            <div class="section">
+                <h2>5. Set Operations</h2>
+                <div class="example">
+                    <p><span class="definition">Complement (A'):</span> Elements in U but not in A.</p>
+                    <ul><li><code>U = {1, 2, 3, 4, 5}</code>, <code>A = {1, 3}</code> → <code>A' = {2, 4, 5}</code></li></ul>
+                    <p><span class="definition">Union (A ∪ B):</span> Elements in A or B.</p>
+                    <ul><li><code>{1, 3} ∪ {2, 3} = {1, 2, 3}</code></li></ul>
+                    <p><span class="definition">Intersection (A ∩ B):</span> Common elements.</p>
+                    <ul><li><code>{1, 2, 3} ∩ {3, 4, 5} = {3}</code></li></ul>
+                    <p><span class="definition">Difference (A - B):</span> Elements in A but not in B.</p>
+                    <ul><li><code>{1, 2, 4} - {2, 5} = {1, 4}</code></li></ul>
+                </div>
+            </div>
+
+            <!-- Composite Operations -->
+            <div class="section">
+                <h2>6. Composite Operations</h2>
+                <div class="example">
+                    <p>Let <code>U = {1, 2, ..., 9}</code>, <code>A = {2, 3, 5, 6}</code>, <code>B = {3, 4, 6, 7}</code>, <code>C = {5, 6, 7, 8}</code>.</p>
+                    <ul>
+                        <li><code>(A ∩ B)' = {1, 2, 4, 5, 7, 8, 9}</code></li>
+                        <li><code>A ∪ (B' ∩ C) = {2, 3, 5, 6, 8}</code></li>
+                        <li><code>(A ∪ B)' ∩ (A ∪ C') = {1, 9}</code></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Key Takeaways -->
+            <div class="section" style="background: #ecf0f1; padding: 15px; border-radius: 5px;">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li>Sets organize elements with shared properties.</li>
+                    <li>Relations (equality, equivalence, subsets) define interactions between sets.</li>
+                    <li>Operations (union, intersection, complement, difference) enable analysis and combination.</li>
+                    <li>Power sets and composite operations handle complex scenarios.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+     <!-- Calculator Section -->
+<div id="calculator" class="section" style="display: none;">
+  <h2>Set Calculator</h2>
+  <div class="calculator">
+
+    <label for="universalSet"><strong>Universal Set</strong></label>
+    <input type="text" id="universalSet" placeholder="1,2,3,4,5,6,7,8,9,10">
+    <label for="setA"><strong>Set A</strong></label>
+    <input type="text" id="setA" placeholder="1,2,3">
+    <label for="setB"><strong>Set B</strong></label>
+    <input type="text" id="setB" placeholder="3,4,5">
+
+    <div class="operations">
+      <button onclick="performOperation('union')">Union (A ∪ B)</button>
+      <button onclick="performOperation('intersection')">Intersection (A ∩ B)</button>
+      <button onclick="performOperation('difference')">Difference (A - B)</button>
+      <button onclick="performOperation('differenceBA')">Difference (B - A)</button>
+      <button onclick="performOperation('complement')">Complement (A')</button>
+      <button onclick="performOperation('complementB')">Complement (B')</button>
+      <button onclick="performOperation('powerset')">Power Set</button>
+      <button onclick="performOperation('relation')">Set Relation Checker</button>
+    </div>
+    
+    <div class="result" id="result"></div>
+  </div>
+</div>
+        <!-- Quiz Section -->
+<div id="quiz" class="section" style="display: none;">
+    <h2>Set Operations Quiz</h2>
+    <div class="quiz-section">
+        <div class="quiz-question" id="question"></div>
+        <input type="text" id="quiz-input" placeholder="Your answer...">
+        <button onclick="checkAnswer()">Submit Answer</button>
+        <div id="quiz-result" style="margin-top: 20px;"></div>
+        <button id="restart-btn" onclick="restartQuiz()" style="display: none; margin-top: 10px;">Restart Quiz</button>
+    </div>
+</div>
+
+
+    <script src="sets.js" defer></script>
+</body>
+</html>
